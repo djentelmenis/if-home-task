@@ -1,10 +1,22 @@
-.stub {
+.center-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
 }
 
-#navbar {
-  height: 100px;
+.lang-bar {
+  justify-content: flex-end;
+  height: 38px;
+  // width: 100px;
+}
+
+.navbar {
+  height: 114px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.claims div {
+  height: 350px;
 }

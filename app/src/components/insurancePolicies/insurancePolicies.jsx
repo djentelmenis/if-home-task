@@ -1,12 +1,15 @@
 import React from 'react';
 
+import './insurancePolicies.scss';
+
 const InsurancePolicies = () => {
   return (
-    <div>
-      <button className="if button secondary" type="button">
+    <div className="insurance-policies">
+      {/* <button className="if button secondary" type="button">
         <span className="if icon ui edit blue" />
         Button with icon
-      </button>
+      </button> */}
+      InsurancePolicies
     </div>
   );
 };
