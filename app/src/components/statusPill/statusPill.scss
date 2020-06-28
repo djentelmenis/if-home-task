@@ -1,0 +1,33 @@
+@import '../../../public/styles/constants.scss';
+@import '../../../public/styles/classes.scss';
+
+.status-pill {
+  @extend %center-contents;
+  border: solid 2px $color-border;
+  padding: 4px 10px;
+  background: none;
+
+  &--unpaid {
+    background: $color-red-support;
+    border-color: $color-red-support;
+  }
+
+  &--ending {
+    background: $color-yellow-complementary;
+    border-color: $color-yellow-complementary;
+  }
+
+  &__text {
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.04rem;
+    font-variation-settings: 'wght' 56;
+    text-align: center;
+
+    &--unpaid,
+    &--ending {
+      color: white;
+    }
+  }
+}

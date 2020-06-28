@@ -1,8 +1,17 @@
 @import '../../../public/styles/constants.scss';
 
 .insurance-policies {
-  @extend %center-contents;
-  &__item {
-    height: 60px;
+  > div:first-of-type {
+    border-top: 1px solid $color-border;
+  }
+
+  &__see-more {
+    margin-top: 30px;
+
+    // A changed visited color in this context doesn't make sense
+    // A button would make more sense imo, but the design looks like the Link component
+    a:visited {
+      color: #0054f0 !important;
+    }
   }
 }

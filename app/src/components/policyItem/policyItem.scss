@@ -1,0 +1,54 @@
+@import '../../../public/styles/constants.scss';
+@import '../../../public/styles/mixins.scss';
+@import '../../../public/styles/classes.scss';
+
+.policy-item {
+  @extend %center-contents;
+  min-height: 96px;
+  border-bottom: 1px solid $color-border;
+
+  &__icon {
+    @media screen and (max-width: 720px) {
+      display: none;
+    }
+
+    i {
+      @extend %icons;
+      height: 50px;
+    }
+  }
+
+  &__text {
+    h4 {
+      // h4 wasn't working properly out of the box
+      margin-bottom: unset !important;
+      font-weight: unset !important;
+    }
+
+    input {
+      font-family: If Sans, Arial, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.125rem;
+      background: transparent;
+      border: none;
+      width: 100%;
+    }
+  }
+
+  &__date {
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+
+    span {
+      font-size: 0.85rem;
+      line-height: 0.85rem;
+    }
+  }
+
+  &__status,
+  &__action {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

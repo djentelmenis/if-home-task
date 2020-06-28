@@ -10,7 +10,7 @@ const Claims = () => {
     <div
       className={className('if', 'block', 'color', 'lighterBeige', 'secondary')}
     >
-      <div className={className(BASE, 'if', 'grid', 'fluid')}>
+      <div className={className(BASE, 'if', 'grid', 'wide')}>
         <div className={className('if', 'row')}>
           <div
             className={className(

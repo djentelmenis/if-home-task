@@ -8,23 +8,16 @@ const BASE = 'header';
 const Header = () => {
   return (
     <header
-      className={className(
-        BASE,
-        'if',
-        'global',
-        'color',
-        'lighterBeige',
-        'secondary',
-      )}
+      className={className(BASE, 'if', 'color', 'lighterBeige', 'secondary')}
     >
-      <div className={className('if', 'grid', 'fluid')}>
+      <div className={className('if', 'grid', 'wide')}>
         <div className={className(`${BASE}__lang-bar`, 'if', 'row')}>
           <div
             className={className(
               `${BASE}__lang-bar__button`,
               'if',
               'col-12--xs',
-              'col-2--sm',
+              'col-2--smlr',
               'color',
               'darkBeige',
               'secondary',

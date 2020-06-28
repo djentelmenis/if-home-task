@@ -1,6 +1,9 @@
-// Centers contents
-%center-contents {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// Colors from IF design system
+$color-brown-secondary: rgb(51, 30, 17);
+$color-red-support: rgb(255, 80, 68);
+$color-yellow-complementary: rgb(252, 199, 79);
+$color-blue-primary: rgb(0, 84, 240);
+$color-lighterBeige-secondary: rgb(246, 243, 240);
+
+// Derived colors
+$color-border: rgba($color-brown-secondary, 0.1);

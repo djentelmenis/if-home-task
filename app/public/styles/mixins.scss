@@ -1,0 +1,13 @@
+// Sets width and height of a element
+@mixin set-size($width, $height: null) {
+  width: $width;
+  height: $height;
+
+  @if $height {
+    width: $width;
+    height: $height;
+  } @else {
+    width: $width;
+    height: $width;
+  }
+}

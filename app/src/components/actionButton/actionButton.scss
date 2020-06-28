@@ -1,0 +1,42 @@
+@import '../../../public/styles/constants.scss';
+@import '../../../public/styles/classes.scss';
+@import '../../../public/styles/mixins.scss';
+
+$icon-width: 40px;
+$text-padding: 8px;
+
+.action-button {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $color-border;
+  border: none;
+
+  &--unpaid {
+    background: $color-blue-primary;
+  }
+
+  &__text {
+    width: calc(100% - #{$icon-width} - #{$text-padding} * 2);
+    font-size: 0.85rem;
+    line-height: 0.85rem;
+    letter-spacing: 0.03rem;
+    padding: 0 $text-padding;
+
+    &--unpaid {
+      color: white;
+    }
+  }
+
+  &__icon {
+    @extend %center-contents;
+    @include set-size($icon-width);
+    border-left: 1px solid $color-lighterBeige-secondary;
+
+    span {
+      @extend %icons;
+      @include set-size(10px);
+    }
+  }
+}

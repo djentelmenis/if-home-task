@@ -1,0 +1,12 @@
+// Centers contents
+%center-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Icons were not working out of the box
+%icons {
+  display: block;
+  background-size: unset !important;
+}
