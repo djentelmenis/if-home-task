@@ -1,18 +1,49 @@
 import React from 'react';
+import className from 'classnames';
 
 import './header.scss';
 
+const BASE = 'header';
+
 const Header = () => {
   return (
-    <header className="if global header color lighterBeige secondary">
-      <div className="if grid fluid">
-        <div className="if row header__lang-bar">
-          <div className="if col-12--xs col-2--sm color darkBeige secondary header__lang-bar__button">
+    <header
+      className={className(
+        BASE,
+        'if',
+        'global',
+        'color',
+        'lighterBeige',
+        'secondary',
+      )}
+    >
+      <div className={className('if', 'grid', 'fluid')}>
+        <div className={className(`${BASE}__lang-bar`, 'if', 'row')}>
+          <div
+            className={className(
+              `${BASE}__lang-bar__button`,
+              'if',
+              'col-12--xs',
+              'col-2--sm',
+              'color',
+              'darkBeige',
+              'secondary',
+            )}
+          >
             <h5>Language</h5>
           </div>
         </div>
       </div>
-      <div className="if row color lightestBeige secondary header__nav-bar">
+      <div
+        className={className(
+          `${BASE}__nav-bar`,
+          'if',
+          'row',
+          'color',
+          'lightestBeige',
+          'secondary',
+        )}
+      >
         <h2>Navbar</h2>
       </div>
     </header>

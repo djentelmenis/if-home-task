@@ -1,16 +1,39 @@
 import React from 'react';
+import className from 'classnames';
 
 import './claims.scss';
 
+const BASE = 'claims';
+
 const Claims = () => {
   return (
-    <div className="if block color lighterBeige secondary">
-      <div className="if grid fluid claims">
-        <div className="if row">
-          <div className="if col-6--xs color lightestBeige secondary claims__items">
+    <div
+      className={className('if', 'block', 'color', 'lighterBeige', 'secondary')}
+    >
+      <div className={className(BASE, 'if', 'grid', 'fluid')}>
+        <div className={className('if', 'row')}>
+          <div
+            className={className(
+              `${BASE}__items`,
+              'if',
+              'col-6--xs',
+              'color',
+              'lightestBeige',
+              'secondary',
+            )}
+          >
             <h2>Claims</h2>
           </div>
-          <div className="if col-6--xs color beige secondary claims__ad">
+          <div
+            className={className(
+              `${BASE}__ad`,
+              'if',
+              'col-6--xs',
+              'color',
+              'beige',
+              'secondary',
+            )}
+          >
             <h2>Ad</h2>
           </div>
         </div>

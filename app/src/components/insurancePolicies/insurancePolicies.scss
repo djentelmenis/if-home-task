@@ -2,7 +2,7 @@
 
 .insurance-policies {
   @extend %center-contents;
-
-  height: 600px;
-  height: 200px;
+  &__item {
+    height: 60px;
+  }
 }

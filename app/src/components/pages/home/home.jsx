@@ -1,4 +1,5 @@
 import React from 'react';
+import className from 'classnames';
 // import ReactImage from '../../../public/img/react.png';
 
 import Header from '../../header/header';
@@ -9,7 +10,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main className="if main">
+      <main className={className('if', 'main')}>
         <InsurancePolicies />
         <Claims />
       </main>
