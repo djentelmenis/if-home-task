@@ -1,0 +1,9 @@
+@import '../../../public/styles/constants.scss';
+
+.claims {
+  &__items,
+  &__ad {
+    @extend %center-contents;
+    height: 350px;
+  }
+}

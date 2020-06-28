@@ -1,0 +1,17 @@
+@import '../../../public/styles/constants.scss';
+
+.header {
+  &__lang-bar {
+    justify-content: flex-end;
+    height: 38px;
+
+    &__button {
+      @extend %center-contents;
+    }
+  }
+
+  &__nav-bar {
+    @extend %center-contents;
+    height: 114px;
+  }
+}
