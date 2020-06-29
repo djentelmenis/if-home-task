@@ -40,11 +40,7 @@ const InsurancePolicies = () => {
           <PolicyItem
             key={policy.title}
             index={index}
-            icon={policy.icon}
-            title={policy.title}
-            notes={policy.notes}
-            date={policy.date}
-            status={policy.status}
+            policy={policy}
             onPolicyChange={onPolicyChange}
           />
         ))}

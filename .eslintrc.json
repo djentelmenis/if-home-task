@@ -17,7 +17,8 @@
   },
   "plugins": ["react"],
   "rules": {
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "no-underscore-dangle": "off"
   },
   "globals": {
     "shallow": true,
@@ -26,6 +27,7 @@
     "jest": true,
     "describe": true,
     "test": true,
-    "it": true
+    "it": true,
+    "beforeEach": true
   }
 }

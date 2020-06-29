@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, string, func } from 'prop-types';
+import { number, string, func, shape } from 'prop-types';
 import className from 'classnames';
 
 import StatusPill from '../statusPill/statusPill';
@@ -7,20 +7,15 @@ import ActionButton from '../actionButton/actionButton';
 
 import './policyItem.scss';
 
-const BASE = 'policy-item';
+export const BASE = 'policy-item';
 
 const PolicyItem = ({
   index,
-  icon,
-  title,
-  notes,
-  date,
-  status,
+  policy: { icon, title, notes, period, status },
   onPolicyChange,
 }) => {
   const onNotesChange = newNotes => {
-    // TODO add debounce
-    onPolicyChange(index, { icon, title, notes: newNotes, date, status });
+    onPolicyChange(index, { icon, title, notes: newNotes, period, status });
   };
 
   return (
@@ -52,8 +47,8 @@ const PolicyItem = ({
         <h4 className={className('if', 'heading', 'smallest')}>{title}</h4>
         <input value={notes} onChange={e => onNotesChange(e.target.value)} />
       </div>
-      <div className={className(`${BASE}__date`, 'if', 'col-2--xs')}>
-        <span>{date}</span>
+      <div className={className(`${BASE}__period`, 'if', 'col-2--xs')}>
+        <span>{period}</span>
       </div>
       <div
         className={className(
@@ -82,11 +77,13 @@ const PolicyItem = ({
 
 PolicyItem.propTypes = {
   index: number.isRequired,
-  icon: string.isRequired,
-  title: string.isRequired,
-  notes: string.isRequired,
-  date: string.isRequired,
-  status: string.isRequired,
+  policy: shape({
+    icon: string.isRequired,
+    title: string.isRequired,
+    notes: string.isRequired,
+    period: string.isRequired,
+    status: string.isRequired,
+  }).isRequired,
   onPolicyChange: func.isRequired,
 };
 

@@ -6,7 +6,7 @@ import { POLICY_STATUS } from '../../constants/constants';
 
 import './actionButton.scss';
 
-const BASE = 'action-button';
+export const BASE = 'action-button';
 
 const ActionButton = ({ status }) => {
   const { ACTIVE, UNPAID, ENDING_SOON } = POLICY_STATUS;
@@ -18,7 +18,7 @@ const ActionButton = ({ status }) => {
       text = 'Fill a claim';
       break;
     case UNPAID:
-      text = 'Pay 24.47$';
+      text = 'Pay 24.47€';
       modifier = 'unpaid';
       break;
     case ENDING_SOON:
@@ -48,8 +48,12 @@ const ActionButton = ({ status }) => {
   );
 };
 
+ActionButton.defaultProps = {
+  status: '',
+};
+
 ActionButton.propTypes = {
-  status: string.isRequired,
+  status: string,
 };
 
 export default ActionButton;
