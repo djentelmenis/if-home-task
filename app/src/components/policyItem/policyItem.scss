@@ -8,9 +8,9 @@
   border-bottom: 1px solid $color-border;
 
   &__icon {
-    @media screen and (max-width: 720px) {
-      display: none;
-    }
+    // @media screen and (max-width: 720px) {
+    //   display: none;
+    // }
 
     i {
       @extend %icons;

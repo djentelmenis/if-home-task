@@ -6,7 +6,7 @@ import { POLICY_STATUS } from '../../constants/constants';
 
 import './statusPill.scss';
 
-const BASE = 'status-pill';
+export const BASE = 'status-pill';
 
 const statusPill = ({ status }) => {
   const { ACTIVE, UNPAID, ENDING_SOON } = POLICY_STATUS;
@@ -43,8 +43,12 @@ const statusPill = ({ status }) => {
   );
 };
 
+statusPill.defaultProps = {
+  status: '',
+};
+
 statusPill.propTypes = {
-  status: string.isRequired,
+  status: string,
 };
 
 export default statusPill;

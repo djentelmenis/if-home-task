@@ -18,5 +18,14 @@
   "plugins": ["react"],
   "rules": {
     "arrow-parens": "off"
+  },
+  "globals": {
+    "shallow": true,
+    "mount": true,
+    "expect": true,
+    "jest": true,
+    "describe": true,
+    "test": true,
+    "it": true
   }
 }

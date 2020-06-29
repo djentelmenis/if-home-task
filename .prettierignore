@@ -7,3 +7,6 @@ dist
 
 # packages
 node_modules
+
+# testing
+coverage
