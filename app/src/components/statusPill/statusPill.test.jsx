@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+
 import StatusPill, { BASE } from './statusPill';
 import { POLICY_STATUS } from '../../constants/constants';
 

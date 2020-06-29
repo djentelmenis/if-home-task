@@ -3,7 +3,7 @@ import className from 'classnames';
 
 import './claims.scss';
 
-const BASE = 'claims';
+export const BASE = 'claims';
 
 const Claims = () => {
   return (

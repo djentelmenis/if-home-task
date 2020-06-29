@@ -1,10 +1,11 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
 
-import Home from './components/pages/home/home';
+import Home from './pages/home/home';
 
 import '../public/styles/global.scss';
 
+// Add React Router for more pages
 const App = () => {
   return (
     <>

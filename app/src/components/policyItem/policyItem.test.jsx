@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+
 import PolicyItem, { BASE } from './policyItem';
 import StatusPill from '../statusPill/statusPill';
 import ActionButton from '../actionButton/actionButton';

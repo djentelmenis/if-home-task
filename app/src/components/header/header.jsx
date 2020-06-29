@@ -3,7 +3,7 @@ import className from 'classnames';
 
 import './header.scss';
 
-const BASE = 'header';
+export const BASE = 'header';
 
 const Header = () => {
   return (

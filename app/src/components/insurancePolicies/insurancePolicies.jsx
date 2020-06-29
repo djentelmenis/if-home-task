@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { string } from 'prop-types';
 import className from 'classnames';
 
 import PolicyItem from '../policyItem/policyItem';
@@ -6,9 +7,9 @@ import { INITIAL_POLICIES, POLICIES } from '../../constants/constants';
 
 import './insurancePolicies.scss';
 
-const BASE = 'insurance-policies';
+export const BASE = 'insurance-policies';
 
-const InsurancePolicies = () => {
+const InsurancePolicies = ({ title }) => {
   const [policies, setPolicies] = useState([]);
 
   // TODO move to reusable hook
@@ -34,7 +35,7 @@ const InsurancePolicies = () => {
     >
       <div className={className(BASE, 'if', 'grid', 'wide')}>
         <h2 className={className(`${BASE}__title`, 'if', 'heading', 'medium')}>
-          Insurance Policies
+          {title}
         </h2>
         {policies.map((policy, index) => (
           <PolicyItem
@@ -52,6 +53,14 @@ const InsurancePolicies = () => {
       </div>
     </div>
   );
+};
+
+InsurancePolicies.defaultProps = {
+  title: '',
+};
+
+InsurancePolicies.propTypes = {
+  title: string,
 };
 
 export default InsurancePolicies;
