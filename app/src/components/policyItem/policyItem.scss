@@ -31,7 +31,6 @@
 
     .heading {
       @extend %truncate-text;
-      // overflow-x: auto;
       // h4 wasn't working properly out of the box
       margin-bottom: unset !important;
       font-weight: unset !important;

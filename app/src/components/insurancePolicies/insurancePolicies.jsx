@@ -26,7 +26,6 @@ const InsurancePolicies = ({ title }) => {
     const newPolicies = [...policies];
     newPolicies[index] = newPolicy;
     localStorage.setItem(POLICIES, JSON.stringify(newPolicies));
-    // setPolicies(newPolicies);
   };
 
   return (
