@@ -17,3 +17,9 @@ To create a production build:
 ```sh
 npm run build
 ```
+
+To run tests:
+
+```sh
+npm run test
+```
