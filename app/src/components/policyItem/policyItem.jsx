@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { number, string, func, shape } from 'prop-types';
 import className from 'classnames';
 
@@ -11,64 +11,56 @@ export const BASE = 'policy-item';
 
 const PolicyItem = ({
   index,
+  policy,
   policy: { icon, title, notes, period, status },
   onPolicyChange,
 }) => {
+  const [titleInput, setTitleInput] = useState(title);
+  const [notesInput, setNotesInput] = useState(notes);
+
+  const onTitleChange = newTitle => {
+    onPolicyChange(index, { ...policy, title: newTitle, notes: notesInput });
+    setTitleInput(newTitle);
+  };
+
   const onNotesChange = newNotes => {
-    onPolicyChange(index, { icon, title, notes: newNotes, period, status });
+    onPolicyChange(index, { ...policy, title: titleInput, notes: newNotes });
+    setNotesInput(newNotes);
   };
 
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
-    <div className={className(BASE, 'if', 'row')}>
-      <div
-        className={className(
-          `${BASE}__icon`,
-          'if',
-          'col-1--xs',
-          'col-1--smlr',
-          'col-1--sm',
-        )}
-      >
+    <div className={BASE}>
+      <div className={className(`${BASE}__icon`)}>
         <i
           className={className('if', 'icon', 'product', icon)}
           aria-hidden="true"
         />
       </div>
-      <div
-        className={className(
-          `${BASE}__text`,
-          'if',
-          'col-3--xs',
-          'col-4--smlr',
-          'col-5--sm',
-        )}
-      >
-        <h4 className={className('if', 'heading', 'smallest')}>{title}</h4>
-        <input value={notes} onChange={e => onNotesChange(e.target.value)} />
+      <div className={className(`${BASE}__text`)}>
+        <input
+          className={className(
+            `${BASE}__text__title`,
+            'if',
+            'heading',
+            'smallest',
+          )}
+          value={titleInput}
+          onChange={e => onTitleChange(e.target.value)}
+        />
+        <input
+          className={`${BASE}__text__notes`}
+          value={notesInput}
+          onChange={e => onNotesChange(e.target.value)}
+        />
       </div>
-      <div className={className(`${BASE}__period`, 'if', 'col-2--xs')}>
+      <div className={className(`${BASE}__period`)}>
         <span>{period}</span>
       </div>
-      <div
-        className={className(
-          `${BASE}__status`,
-          'if',
-          'col-3--xs',
-          'col-2--smlr',
-        )}
-      >
+      <div className={className(`${BASE}__status`)}>
         <StatusPill status={status} />
       </div>
-      <div
-        className={className(
-          `${BASE}__action`,
-          'if',
-          'col-3--xs',
-          'col-3--smlr',
-          'col-2--sm',
-        )}
-      >
+      <div className={className(`${BASE}__action`)}>
         <ActionButton status={status} />
       </div>
     </div>
@@ -87,4 +79,4 @@ PolicyItem.propTypes = {
   onPolicyChange: func.isRequired,
 };
 
-export default PolicyItem;
+export default React.memo(PolicyItem);

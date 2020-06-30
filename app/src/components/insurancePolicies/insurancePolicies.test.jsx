@@ -38,7 +38,7 @@ describe('<InsurancePolicies>', () => {
   });
 
   it('should store new policy data in local storage on PolicyItem input change', () => {
-    const _input = wrapper.find('input').at(0);
+    const _input = wrapper.find('.policy-item__text__notes').at(0);
     const newText = 'New Text';
     const newPolicies = [...INITIAL_POLICIES];
     newPolicies[0].notes = newText;

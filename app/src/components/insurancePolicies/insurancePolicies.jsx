@@ -26,30 +26,26 @@ const InsurancePolicies = ({ title }) => {
     const newPolicies = [...policies];
     newPolicies[index] = newPolicy;
     localStorage.setItem(POLICIES, JSON.stringify(newPolicies));
-    setPolicies(newPolicies);
+    // setPolicies(newPolicies);
   };
 
   return (
-    <div
-      className={className('if', 'block', 'color', 'lighterBeige', 'secondary')}
-    >
-      <div className={className(BASE, 'if', 'grid', 'wide')}>
-        <h2 className={className(`${BASE}__title`, 'if', 'heading', 'medium')}>
-          {title}
-        </h2>
-        {policies.map((policy, index) => (
-          <PolicyItem
-            key={policy.title}
-            index={index}
-            policy={policy}
-            onPolicyChange={onPolicyChange}
-          />
-        ))}
-        <div className={className(`${BASE}__see-more`, 'if', 'row')}>
-          <a href="." className="if">
-            See 2 more
-          </a>
-        </div>
+    <div className={className(BASE, 'if')}>
+      <h2 className={className(`${BASE}__title`, 'if', 'heading', 'medium')}>
+        {title}
+      </h2>
+      {policies.map((policy, index) => (
+        <PolicyItem
+          key={policy.title}
+          index={index}
+          policy={policy}
+          onPolicyChange={onPolicyChange}
+        />
+      ))}
+      <div className={className(`${BASE}__see-more`, 'if')}>
+        <a href="." className="if">
+          See 2 more
+        </a>
       </div>
     </div>
   );

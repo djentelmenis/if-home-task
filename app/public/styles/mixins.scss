@@ -1,3 +1,6 @@
+@import './classes.scss';
+@import './constants.scss';
+
 // Sets width and height of a element
 @mixin set-size($width, $height: null) {
   width: $width;
@@ -9,5 +12,36 @@
   } @else {
     width: $width;
     height: $width;
+  }
+}
+
+@mixin justify-right() {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+// Viewports
+@mixin smlr() {
+  @media screen and (min-width: $smlr) {
+    @content;
+  }
+}
+
+@mixin sm() {
+  @media screen and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin md() {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media screen and (min-width: $lg) {
+    @content;
   }
 }

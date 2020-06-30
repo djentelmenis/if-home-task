@@ -35,8 +35,8 @@ describe('<PolicyItem>', () => {
   it('should render text block with correct text', () => {
     const _text = wrapper.find(`.${BASE}__text`);
     expect(_text).toHaveLength(1);
-    expect(_text.find('h4').text()).toBe(policy.title);
-    expect(_text.find('input').props().value).toBe(policy.notes);
+    expect(_text.find('input').at(0).props().value).toBe(policy.title);
+    expect(_text.find('input').at(1).props().value).toBe(policy.notes);
   });
 
   it('should render period block with correct text', () => {
@@ -61,17 +61,33 @@ describe('<PolicyItem>', () => {
     });
   });
 
-  it('should call passed down onPolicyChange on input change', () => {
-    const _input = wrapper.find('input');
-    const newText = 'New Text';
+  it('should update title input and call passed down onPolicyChange on input change', () => {
+    const _input = wrapper.find(`.${BASE}__text__title`);
+    const newTitle = 'New Text';
     const newPolicy = {
       icon: policy.icon,
-      notes: newText,
+      notes: policy.notes,
+      period: policy.period,
+      status: policy.status,
+      title: newTitle,
+    };
+    _input.simulate('change', { target: { value: newTitle } });
+    expect(onPolicyChange).toHaveBeenCalledWith(index, newPolicy);
+    expect(wrapper.find(`.${BASE}__text__title`).props().value).toBe(newTitle);
+  });
+
+  it('should update notes input and call passed down onPolicyChange on input change', () => {
+    const _input = wrapper.find(`.${BASE}__text__notes`);
+    const newNotes = 'New Text';
+    const newPolicy = {
+      icon: policy.icon,
+      notes: newNotes,
       period: policy.period,
       status: policy.status,
       title: policy.title,
     };
-    _input.simulate('change', { target: { value: newText } });
+    _input.simulate('change', { target: { value: newNotes } });
     expect(onPolicyChange).toHaveBeenCalledWith(index, newPolicy);
+    expect(wrapper.find(`.${BASE}__text__notes`).props().value).toBe(newNotes);
   });
 });

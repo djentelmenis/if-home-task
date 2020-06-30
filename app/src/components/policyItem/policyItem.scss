@@ -3,29 +3,42 @@
 @import '../../../public/styles/classes.scss';
 
 .policy-item {
-  @extend %center-contents;
   min-height: 96px;
+  // Couldn't get the UI work properly with the IF Grid
+  // So created a basic one on my own
+  display: grid;
+  grid-template-columns: 100px auto 160px;
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
   border-bottom: 1px solid $color-border;
 
   &__icon {
-    // @media screen and (max-width: 720px) {
-    //   display: none;
-    // }
+    @extend %center-contents;
+    grid-area: 1 / 1 / 1 / 2;
 
     i {
       @extend %icons;
-      height: 50px;
+      @include set-size(50px);
     }
   }
 
   &__text {
-    h4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: 1 / 2 / 1 / 3;
+    min-width: 0;
+
+    .heading {
+      @extend %truncate-text;
+      // overflow-x: auto;
       // h4 wasn't working properly out of the box
       margin-bottom: unset !important;
       font-weight: unset !important;
     }
 
     input {
+      @extend %truncate-text;
       font-family: If Sans, Arial, sans-serif;
       font-size: 1.125rem;
       line-height: 1.125rem;
@@ -36,9 +49,8 @@
   }
 
   &__period {
-    display: flex;
-    justify-content: flex-end;
-    text-align: center;
+    justify-content: flex-start;
+    grid-area: 2 / 2 / 2 / 4;
 
     span {
       font-size: 0.85rem;
@@ -46,9 +58,48 @@
     }
   }
 
-  &__status,
+  &__status {
+    @extend %center-contents;
+    grid-area: 2 / 1 / 2 / 2;
+  }
+
   &__action {
-    display: flex;
-    justify-content: flex-end;
+    @extend %justify-right;
+    grid-area: 1 / 3 / 1 / 4;
+  }
+
+  @include sm() {
+    grid-template-columns: 50px auto 160px 100px 160px;
+    grid-row-gap: 20px;
+
+    &__icon {
+      grid-area: unset;
+    }
+
+    &__text {
+      grid-area: unset;
+    }
+
+    &__period {
+      @include justify-right();
+      grid-area: unset;
+    }
+
+    &__status {
+      @include justify-right();
+      grid-area: unset;
+    }
+
+    &__action {
+      grid-area: unset;
+    }
+  }
+
+  @include md() {
+    grid-template-columns: 50px auto 200px 120px 180px;
+  }
+
+  @include lg() {
+    grid-template-columns: 50px auto 200px 150px 200px;
   }
 }

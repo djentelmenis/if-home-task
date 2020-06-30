@@ -6,6 +6,7 @@
   border: solid 2px $color-border;
   padding: 4px 10px;
   background: none;
+  width: fit-content;
 
   &--unpaid {
     background: $color-red-support;

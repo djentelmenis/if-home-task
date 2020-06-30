@@ -18,6 +18,7 @@ const ActionButton = ({ status }) => {
       text = 'Fill a claim';
       break;
     case UNPAID:
+      // This is pretty silly and should be coming as a prop
       text = 'Pay 24.47€';
       modifier = 'unpaid';
       break;
