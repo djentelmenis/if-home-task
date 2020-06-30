@@ -36,6 +36,7 @@ const statusPill = ({ status }) => {
     <div className={className(BASE, `${BASE}--${modifier}`)}>
       <span
         className={className(`${BASE}__text`, `${BASE}__text--${modifier}`)}
+        aria-label="Policy status"
       >
         {text}
       </span>

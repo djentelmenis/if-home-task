@@ -22,6 +22,8 @@ const Header = () => {
               'darkBeige',
               'secondary',
             )}
+            role="button"
+            aria-label="Click to change language"
           >
             <h5>Language</h5>
           </div>

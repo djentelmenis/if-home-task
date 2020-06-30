@@ -47,15 +47,17 @@ const PolicyItem = ({
           )}
           value={titleInput}
           onChange={e => onTitleChange(e.target.value)}
+          aria-label="Policy title"
         />
         <input
           className={`${BASE}__text__notes`}
           value={notesInput}
           onChange={e => onNotesChange(e.target.value)}
+          aria-label="Policy notes"
         />
       </div>
       <div className={className(`${BASE}__period`)}>
-        <span>{period}</span>
+        <span aria-label="Policy period">{period}</span>
       </div>
       <div className={className(`${BASE}__status`)}>
         <StatusPill status={status} />
